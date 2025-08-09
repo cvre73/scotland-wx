@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scotland WX (Single-File)</title>
+
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scotland WX">
+<meta name="theme-color" content="#0b0d12">
+
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+
+<style>
+  :root{ --bg:#0b0d12; --panel:#121621; --text:#eef2ff; --muted:#a6b0cf; --accent:#4da3ff; --ok:#42d392; --warn:#ffbd2e; --bad:#ff7b7b; }
+  html,body{ height:100%; margin:0; background:linear-gradient(180deg,#0b0d12,#0f1320); color:var(--text);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+  .wrap{ max-width:1100px; margin:0 auto; padding:14px; }
+  header{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin-bottom:10px; }
+  h1{ font-size:20px; margin:0; letter-spacing:0.3px; }
+  .controls{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  button, select, .pill{ background:var(--panel); color:var(--text); border:1px solid #1f2636; padding:8px 12px; border-radius:12px; cursor:pointer; font-weight:600; }
+  button:hover, select:hover{ border-color:#2b3550; }
+  .coord{ background:var(--panel); border:1px solid #1f2636; padding:6px 10px; border-radius:10px; display:flex; gap:6px; align-items:center; color:var(--muted); font-variant-numeric: tabular-nums; }
+  .grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+  @media(min-width: 850px){ .grid{ grid-template-columns:1fr 1fr; grid-auto-rows:minmax(320px,auto);} .panel.map{ grid-row:span 2; } }
+  .panel{ background:rgba(18,22,33,0.78); border: 1px solid #1f2636; border-radius:16px; padding:12px; box-shadow:0 10px 30px rgba(0,0,0,0.25); }
+  .panel h2{ font-size:14px; font-weight:700; margin:2px 0 8px 2px; color:#cbd5ff; }
+  #map{ height:100%; min-height:420px; border-radius:12px; }
+  .meta{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; color:var(--muted); font-size:12px; margin:6px 2px 0; }
+  .legend{ font-size:12px; color:var(--muted); }
+  .tabs{ display:flex; gap:6px; margin:4px 2px 10px; flex-wrap:wrap; }
+  .tab{ background:#0e1220; border:1px solid #1f2636; color:#cfd8ff; padding:6px 10px; border-radius:10px; cursor:pointer; font-weight:700; }
+  .tab.active{ border-color:#2b3550; box-shadow:0 0 0 2px rgba(77,163,255,0.15) inset; }
+  .iframeWrap{ position:relative; width:100%; height:420px; border-radius:12px; overflow:hidden; }
+  .iframeWrap iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .small{ font-size:12px; color:var(--muted); }
+  .foot{ margin-top:10px; font-size:12px; color:var(--muted); display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:space-between; }
+
+  .ultra body, .ultra{ background:black; }
+  .ultra .wrap{ max-width:none; padding:10px; }
+  .ultra header, .ultra .grid{ display:none; }
+  .ultra .ultraCard{ display:block; padding:8px 10px; margin:0 auto; border-radius:18px; border:1px solid #1b1b1b;
+    background:linear-gradient(180deg,#0a0a0a,#121212); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04); color:#fff; width:100%; }
+  .ultra .big{ font-size:42px; font-weight:800; letter-spacing:0.5px; line-height:1.05; }
+  .ultra .row{ display:flex; justify-content:space-between; align-items:baseline; }
+  .ultra .label{ color:#a9b1c6; font-size:13px; font-weight:600; }
+  .ultra .metaTiny{ color:#8b93a6; font-size:12px; margin-top:6px; }
+  .ultra .pillRow{ display:flex; gap:6px; margin-top:10px; flex-wrap:wrap; }
+  .ultra .pill{ padding:6px 10px; border-radius:999px; font-weight:700; font-size:13px; border:1px solid #2a2a2a; background:#131313; }
+
+  #ptr { position: fixed; top:0; left:0; right:0; height:0; overflow:hidden; display:flex; align-items:center; justify-content:center;
+         background: linear-gradient(180deg, rgba(20,24,36,0.95), rgba(20,24,36,0.9)); color:#cfd8ff; z-index:9999;
+         transition: height 0.15s ease; border-bottom:1px solid #1f2636; }
+  #ptr .spinner { width:22px; height:22px; border-radius:50%; border:3px solid rgba(157,123,255,0.35); border-top-color:#9d7bff; animation: spin 0.9s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<div id="ptr"><div class="spinner"></div></div>
+
+<div class="wrap">
+  <header>
+    <h1>Scotland Forecast + Radar + Wind</h1>
+    <div class="controls">
+      <button id="btnMyArea">My Area</button>
+      <button id="btnScotland">Whole of Scotland</button>
+      <button id="btnUltra">Ultra View</button>
+      <select id="unitSelect" title="Units for wind/gust">
+        <option value="ms">m/s</option>
+        <option value="mph">mph</option>
+        <option value="knots">knots</option>
+        <option value="bft">Beaufort</option>
+      </select>
+      <div class="coord" id="coordBox">Lat —, Lon —</div>
+    </div>
+  </header>
+
+  <div class="grid" id="mainGrid">
+    <section class="panel">
+      <h2>Hour-by-hour forecast (Yr.no / MET Norway)</h2>
+      <canvas id="forecastChart" height="240" aria-label="Forecast chart"></canvas>
+      <div class="meta">
+        <div>Updated: <span id="updated">—</span></div>
+        <div class="legend">Lines: Temp (°C), Wind, Gust • Bars: Precip (mm/hr)</div>
+      </div>
+    </section>
+
+    <section class="panel map">
+      <h2>Live Map</h2>
+      <div class="tabs">
+        <button class="tab" id="tabRadar">Radar</button>
+        <button class="tab" id="tabWind">Wind</button>
+        <button class="tab" id="tabGust">Gusts</button>
+      </div>
+      <div id="mapHolder">
+        <div id="map"></div>
+      </div>
+      <div id="windHolder" class="iframeWrap" style="display:none">
+        <iframe id="windIframe" title="Wind layer"></iframe>
+      </div>
+      <div class="meta" id="radarMeta">
+        <div>Frame: <span id="radarTime">—</span></div>
+        <div><span id="radarStatus" class="small">Loading radar…</span></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="ultraCard" id="ultraCard" style="display:none">
+    <div class="row"><div class="label">Now</div><div class="label" id="u_time">—</div></div>
+    <div class="row" style="margin-top:2px">
+      <div class="big" id="u_temp">—°</div>
+      <div style="text-align:right">
+        <div class="label">Wind</div>
+        <div class="big" style="font-size:32px" id="u_wind">—</div>
+      </div>
+    </div>
+    <div class="pillRow">
+      <div class="pill" id="u_precip">Precip —</div>
+      <div class="pill" id="u_clouds">Cloud —%</div>
+      <div class="pill" id="u_gust">Gust —</div>
+    </div>
+    <div class="metaTiny" id="u_loc">Lat —, Lon —</div>
+    <div class="metaTiny" id="u_updated">Updated —</div>
+  </div>
+
+  <div class="foot" id="foot">
+    <div>Data: <a href="https://api.met.no/" target="_blank" rel="noreferrer">MET Norway (Yr.no)</a> •
+      Radar: <a href="https://www.rainviewer.com/api.html" target="_blank" rel="noreferrer">RainViewer</a> •
+      Wind layers: <a href="https://www.windy.com/" target="_blank" rel="noreferrer">Windy</a> •
+      Map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a></div>
+    <div class="small">Tip: Add to iPhone Home Screen. Use <b>Ultra View</b> for Apple Watch.</div>
+  </div>
+</div>
+
+<script>
+const params = new URLSearchParams(location.search);
+const MODE_ULTRA = params.get('mode') === 'ultra';
+if (MODE_ULTRA) { document.documentElement.classList.add('ultra'); document.getElementById('ultraCard').style.display = 'block'; }
+
+const DEFAULT_COORDS = { lat: 56.8742586, lon: -2.2599375 };
+const SCOTLAND_VIEW = { center: [56.8, -4.0], zoom: 6 };
+const LOCAL_VIEW_ZOOM = 11;
+const HOURS_AHEAD = 24;
+
+const $ = (id)=>document.getElementById(id);
+function fmtTime(iso){ const d = new Date(iso); return d.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}); }
+function fmtTimeFull(iso){ const d = new Date(iso); return d.toLocaleString([], {weekday:'short', hour:'2-digit', minute:'2-digit'}); }
+const num = (v)=> (typeof v === 'number' ? v : (v ? Number(v) : null));
+
+let windUnit = localStorage.getItem('windUnit') || 'ms';
+$('#unitSelect').value = windUnit;
+function convertWind(val){
+  if (val == null) return null;
+  switch(windUnit){
+    case 'ms': return val;
+    case 'mph': return val * 2.23694;
+    case 'knots': return val * 1.94384;
+    case 'bft':
+      if (val < 0.5) return 0;
+      if (val < 1.6) return 1;
+      if (val < 3.4) return 2;
+      if (val < 5.5) return 3;
+      if (val < 8.0) return 4;
+      if (val < 10.8) return 5;
+      if (val < 13.9) return 6;
+      if (val < 17.2) return 7;
+      if (val < 20.8) return 8;
+      if (val < 24.5) return 9;
+      if (val < 28.5) return 10;
+      if (val < 32.7) return 11;
+      return 12;
+    default: return val;
+  }
+}
+function unitLabel(){
+  switch(windUnit){
+    case 'ms': return 'm/s';
+    case 'mph': return 'mph';
+    case 'knots': return 'kt';
+    case 'bft': return 'Bft';
+  }
+}
+$('#unitSelect').addEventListener('change', ()=>{ windUnit = $('#unitSelect').value; localStorage.setItem('windUnit', windUnit); refreshAll(); });
+
+function saveMapView(){
+  if (!window.map) return;
+  try{
+    const c = map.getCenter(); const z = map.getZoom();
+    localStorage.setItem('mapCenter', JSON.stringify({lat:c.lat, lon:c.lng}));
+    localStorage.setItem('mapZoom', String(z));
+  }catch(e){}
+}
+function loadMapView(){
+  try{
+    const c = JSON.parse(localStorage.getItem('mapCenter'));
+    const z = Number(localStorage.getItem('mapZoom'));
+    if (c && !isNaN(c.lat) && !isNaN(c.lon) && !isNaN(z)) return { center:[c.lat, c.lon], zoom:z };
+  }catch(e){}
+  return null;
+}
+
+async function loadForecast(lat, lon){
+  const url = `https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${lat}&lon=${lon}`;
+  const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+  if(!res.ok) throw new Error('Forecast fetch failed: ' + res.status);
+  const data = await res.json();
+  const ts = data.properties.timeseries;
+  const now = Date.now();
+  const ahead = now + HOURS_AHEAD*3600*1000;
+  const rows = ts.filter(t => { const tt = new Date(t.time).getTime(); return tt >= now - 10*60*1000 && tt <= ahead; })
+    .map(t => { const det = t.data.instant.details || {}; const n1 = (t.data.next_1_hours && t.data.next_1_hours.details) || null;
+      return { time: t.time, temp: num(det.air_temperature), wind: num(det.wind_speed), gust: num(det.wind_speed_of_gust),
+               clouds: num(det.cloud_area_fraction), precip: n1 ? num(n1.precipitation_amount) : 0 }; });
+  const updated = data.properties.meta.updated_at;
+  return { rows, updated };
+}
+
+let chart;
+function renderChart(rows){
+  const ctx = $('forecastChart').getContext('2d');
+  const labels = rows.map(r => new Date(r.time).toLocaleTimeString([], {hour:'2-digit'}));
+  const temps = rows.map(r => r.temp);
+  const winds = rows.map(r => convertWind(r.wind));
+  const gusts = rows.map(r => convertWind(r.gust));
+  const precs = rows.map(r => r.precip);
+  if(chart) chart.destroy();
+  chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { type:'bar',  label:'Precip (mm/hr)', data:precs, yAxisID:'y2' },
+        { type:'line', label:'Temp (°C)',      data:temps, yAxisID:'y',  tension:0.3 },
+        { type:'line', label:()=>`Wind (${unitLabel()})`, data:winds, yAxisID:'y3', tension:0.3 },
+        { type:'line', label:()=>`Gust (${unitLabel()})`, data:gusts, yAxisID:'y3', tension:0.3 }
+      ]
+    },
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{ labels:{ color:'#cfd8ff' } }, tooltip:{ intersect:false } },
+      scales:{
+        x:{ ticks:{ color:'#a6b0cf', maxRotation:0, autoSkip:true }, grid:{ color:'rgba(255,255,255,0.05)' } },
+        y:{ position:'left', ticks:{ color:'#cfd8ff' }, grid:{ color:'rgba(255,255,255,0.05)' } },
+        y2:{ position:'right', ticks:{ color:'#a6b0cf' }, grid:{ drawOnChartArea:false } },
+        y3:{ position:'right', display:true, ticks:{ color:'#a6b0cf' } }
+      }
+    }
+  });
+}
+
+let map, radarFrames = [], radarIndex = 0, radarLayer;
+async function initMap(){
+  if (MODE_ULTRA) return;
+  map = L.map('map', { zoomControl: true, attributionControl: false });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18 }).addTo(map);
+  const saved = loadMapView();
+  if (saved) map.setView(saved.center, saved.zoom); else map.setView(SCOTLAND_VIEW.center, SCOTLAND_VIEW.zoom);
+  map.on('moveend', saveMapView);
+  await loadRadar();
+  animateRadar();
+}
+async function loadRadar(){
+  if (MODE_ULTRA) return;
+  const res = await fetch('https://api.rainviewer.com/public/weather-maps.json');
+  const data = await res.json();
+  const host = data.host;
+  const past = data.radar.past.slice(-8);
+  const nowcast = data.radar.nowcast || [];
+  radarFrames = past.concat(nowcast);
+  radarIndex = radarFrames.length - 1;
+  showRadarFrame(radarIndex, host);
+}
+function showRadarFrame(i, host){
+  if (MODE_ULTRA) return;
+  const fr = radarFrames[i];
+  $('radarTime').textContent = fmtTime(fr.time*1000);
+  $('radarStatus').textContent = i >= radarFrames.length-1 ? 'Latest' : 'Playback';
+  const urlTemplate = host + fr.path + '/256/{z}/{x}/{y}/2/1_1.png';
+  if(radarLayer) map.removeLayer(radarLayer);
+  radarLayer = L.tileLayer(urlTemplate, { opacity: 0.7 });
+  radarLayer.addTo(map);
+}
+function animateRadar(){
+  if (MODE_ULTRA) return;
+  setInterval(async ()=>{
+    try {
+      const r = await fetch('https://api.rainviewer.com/public/weather-maps.json');
+      const d = await r.json();
+      showRadarFrame( (radarIndex = (radarIndex + 1) % radarFrames.length), d.host );
+    } catch(e){
+      if (radarFrames.length) showRadarFrame( (radarIndex = (radarIndex + 1) % radarFrames.length), 'https://tilecache.rainviewer.com');
+    }
+  }, 3000);
+}
+
+let current = { ...DEFAULT_COORDS };
+function updateCoordBox(){ const c = $('coordBox'); if (c) c.textContent = `Lat ${current.lat.toFixed(5)}, Lon ${current.lon.toFixed(5)}`; }
+async function refreshAll(){
+  try{
+    const { rows, updated } = await loadForecast(current.lat, current.lon);
+    if (!MODE_ULTRA) { renderChart(rows); $('updated').textContent = new Date(updated).toLocaleString(); }
+    else { renderUltra(rows, updated); }
+  }catch(e){
+    console.error(e); if (!MODE_ULTRA) $('updated').textContent = 'Error'; else $('u_updated').textContent = 'Error loading'; alert('Could not load forecast.');
+  }
+}
+function goMyArea(){
+  if (!navigator.geolocation) {
+    current = { ...DEFAULT_COORDS }; updateCoordBox(); if (map) { map.setView([current.lat, current.lon], LOCAL_VIEW_ZOOM); saveMapView(); } refreshAll(); return;
+  }
+  navigator.geolocation.getCurrentPosition(async pos=>{
+    current.lat = pos.coords.latitude; current.lon = pos.coords.longitude; updateCoordBox();
+    if (map) { map.setView([current.lat, current.lon], LOCAL_VIEW_ZOOM); saveMapView(); }
+    await refreshAll(); setWindySrc();
+  }, async err=>{
+    current = { ...DEFAULT_COORDS }; updateCoordBox();
+    if (map) { map.setView([current.lat, current.lon], LOCAL_VIEW_ZOOM); saveMapView(); }
+    await refreshAll(); setWindySrc();
+  }, { enableHighAccuracy: true, timeout: 8000, maximumAge: 60000 });
+}
+function goScotland(){ if (map) { map.setView(SCOTLAND_VIEW.center, SCOTLAND_VIEW.zoom); saveMapView(); } setWindySrc(true); }
+
+function renderUltra(rows, updated){
+  const now = rows[0] || {};
+  $('u_time').textContent = fmtTimeFull(now.time || Date.now());
+  const windStr = (now.wind != null ? convertWind(now.wind).toFixed(1) + ' ' + unitLabel() : '— ' + unitLabel());
+  const gustStr = (now.gust != null ? convertWind(now.gust).toFixed(1) + ' ' + unitLabel() : '— ' + unitLabel());
+  $('u_temp').textContent = (now.temp != null ? Math.round(now.temp) + '°' : '—°');
+  $('u_wind').textContent = windStr;
+  $('u_precip').textContent = 'Next hr ' + (now.precip != null ? now.precip.toFixed(1) + ' mm' : '—');
+  $('u_clouds').textContent = 'Cloud ' + (now.clouds != null ? Math.round(now.clouds) + '%' : '—%');
+  $('u_gust').textContent = 'Gust ' + gustStr;
+  $('u_loc').textContent = `Lat ${current.lat.toFixed(3)}, Lon ${current.lon.toFixed(3)}`;
+  $('u_updated').textContent = 'Updated ' + new Date(updated).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+}
+
+const windIframe = $('windIframe');
+function setWindySrc(scotland=false){
+  let z = scotland ? SCOTLAND_VIEW.zoom : (map && map.getZoom ? map.getZoom() : SCOTLAND_VIEW.zoom);
+  let center = scotland ? { lat: SCOTLAND_VIEW.center[0], lon: SCOTLAND_VIEW.center[1] } : current;
+  if (!scotland && (!map || !map.getZoom)) { const saved = loadMapView(); if (saved) { z = saved.zoom; center = { lat: saved.center[0], lon: saved.center[1] }; } }
+  const overlay = (currentOverlay === 'gust' ? 'gust' : 'wind');
+  windIframe.src = `https://embed.windy.com/embed2.html?lat=${center.lat.toFixed(3)}&lon=${center.lon.toFixed(3)}&zoom=${z}&level=surface&overlay=${overlay}&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates`;
+}
+
+let currentOverlay = localStorage.getItem('overlay') || 'radar';
+const tabRadar = $('tabRadar'), tabWind = $('tabWind'), tabGust = $('tabGust');
+function activateTab(which){
+  try{ localStorage.setItem('overlay', which); }catch(e){}
+  [tabRadar, tabWind, tabGust].forEach(t=>t.classList.remove('active'));
+  $('radarMeta').style.display = (which === 'radar') ? 'flex' : 'none';
+  if (which === 'radar'){
+    $('mapHolder').style.display = 'block';
+    $('windHolder').style.display = 'none';
+    tabRadar.classList.add('active');
+    currentOverlay = 'radar';
+  } else {
+    $('mapHolder').style.display = 'none';
+    $('windHolder').style.display = 'block';
+    currentOverlay = which;
+    setWindySrc(which === 'wind' ? false : false);
+    if (which === 'wind') tabWind.classList.add('active');
+    if (which === 'gust') tabGust.classList.add('active');
+  }
+}
+tabRadar.addEventListener('click', ()=>activateTab('radar'));
+tabWind.addEventListener('click',  ()=>activateTab('wind'));
+tabGust.addEventListener('click',  ()=>activateTab('gust'));
+
+const btnMy = $('btnMyArea'), btnSco = $('btnScotland'), btnUltra = $('btnUltra');
+if (btnMy) btnMy.addEventListener('click', goMyArea);
+if (btnSco) btnSco.addEventListener('click', ()=>{ goScotland(); if(currentOverlay!=='radar') setWindySrc(true); });
+if (btnUltra) btnUltra.addEventListener('click', ()=>{ const u = new URL(location.href); u.searchParams.set('mode','ultra'); location.href = u.toString(); });
+
+(function(){
+  let startY = 0, pulling = false, threshold = 65, maxPull = 100;
+  const ptr = document.getElementById('ptr');
+  const canPull = ()=> window.scrollY <= 0;
+  function setHeight(h){ ptr.style.height = Math.max(0, Math.min(maxPull, h)) + 'px'; }
+  window.addEventListener('touchstart', (e)=>{ if (!canPull()) return; startY = e.touches[0].clientY; pulling = true; }, {passive:true});
+  window.addEventListener('touchmove',  (e)=>{ if (!pulling) return; const y = e.touches[0].clientY - startY; if (y > 0) setHeight(y*0.7); }, {passive:true});
+  window.addEventListener('touchend',   async ()=>{ if (!pulling) return; pulling = false; const h = parseFloat(ptr.style.height) || 0;
+    if (h >= threshold){ try{ await refreshAll(); await loadRadar(); }catch(e){} } setHeight(0); }, {passive:true});
+})();
+
+(async function startup(){
+  if (!MODE_ULTRA) { updateCoordBox(); await initMap(); } else { const foot = $('foot'); if (foot) foot.style.display = 'none'; }
+  goMyArea();
+  activateTab(currentOverlay || 'radar');
+})();
+</script>
+</body>
+</html>
